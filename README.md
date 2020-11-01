@@ -2,4 +2,4 @@
 
 Was a self-made project to learn react and co.
 
-[Live Demo](itaewon-class-react.netlify.app)
+[Live Demo](https://itaewon-class-react.netlify.app/)
