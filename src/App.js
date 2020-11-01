@@ -1,5 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Home } from "./pages";
+import { Home, About, Error, Characters, SingleCharacter } from "./pages";
+import { Route, Switch } from "react-router-dom";
+import React from "react";
+import Navbar from "./components/Navbar";
 
 // const ContainerVariants = {
 //   hidden: { opacity: 0 },
@@ -7,7 +10,28 @@ import { Home } from "./pages";
 // };
 
 function App() {
-  return <div className="">App</div>;
+  return (
+    <>
+      <Navbar></Navbar>
+      <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route path="/about">
+          <About></About>
+        </Route>
+        <Route exact path="/characters">
+          <Characters></Characters>
+        </Route>
+        <Route path="/characters/:id">
+          <SingleCharacter></SingleCharacter>
+        </Route>
+        <Route path="*">
+          <Error></Error>
+        </Route>
+      </Switch>
+    </>
+  );
 }
 
 export default App;
